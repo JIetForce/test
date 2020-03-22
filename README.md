@@ -2,15 +2,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Demo
 
-Demo version of the application here: (https://jietforce.github.io/test/)
+Demo version of the application here: (https://test-lviv.herokuapp.com/).
 
 ## Installation
 
-Run 
-```shell
-npm install 
-```
-in the extracted folder
+In the extracted folder run:
+
+### npm install 
 
 ## Available Scripts
 
