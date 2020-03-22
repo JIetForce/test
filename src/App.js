@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import Header from './components/header/header';
+import Main from './containers/main';
 
 function App() {
   // localStorage.setItem('auth', JSON.stringify(false));
   return (
     <BrowserRouter>
       <div className='App'>
-        <Header />
+        <Main />
       </div>
     </BrowserRouter>
   );

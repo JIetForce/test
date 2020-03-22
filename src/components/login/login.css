@@ -8,6 +8,7 @@
   transform: translate(-50%, -50%);
   text-align: center;
   background-color: rgb(219, 210, 210);
+  border-radius: 5px;
 }
 
 .login input[type='text'], .login input[type='password'] {

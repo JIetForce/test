@@ -1,55 +1,41 @@
-import React, { useState } from 'react';
-import { Route, NavLink, Switch, Redirect } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 import { Context } from '../../context';
 
 import './header.css';
-import Home from './home/home';
-import Login from './login/login';
-import News from './news/news';
-import Profile from './profile/profile';
 
 const Header = () => {
-  const [auth, setAuth] = useState(JSON.parse(localStorage.getItem('auth')));
+  const { auth } = useContext(Context);
 
   return (
-    <div className='header'>
-      <header>
-        <nav>
-          <ul>
-            <li>
-              <NavLink exact to='/'>
-                To the main
+    <header>
+      <nav>
+        <ul className='nav justify-content-center'>
+          <li className='nav-item'>
+            <NavLink exact to='/' className='nav-link' href='#'>
+              To the main
+            </NavLink>
+          </li>
+          {!auth ? (
+            <li className='nav-item'>
+              <NavLink to='/login' className='nav-link' href='#'>
+                Login
               </NavLink>
             </li>
-
-            {!auth ? (
-              <li>
-                <NavLink to='/login'>Login</NavLink>
-              </li>
-            ) : null}
-
-            <li>
-              <NavLink to='/news'>News</NavLink>
-            </li>
-            <li>
-              <NavLink to='/profile'>Profile</NavLink>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <Context.Provider value={{ auth, setAuth }}>
-        <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/login' component={Login} />
-          <Route path='/news' component={News} />
-          {auth ? (
-            <Route to='/profile' component={Profile} />
-          ) : (
-            <Redirect to='/login' component={Login} />
-          )}
-        </Switch>
-      </Context.Provider>
-    </div>
+          ) : null}
+          <li className='nav-item'>
+            <NavLink to='/news' className='nav-link' href='#'>
+              News
+            </NavLink>
+          </li>
+          <li className='nav-item'>
+            <NavLink to='/profile' className='nav-link' href='#'>
+              Profile
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 };
 

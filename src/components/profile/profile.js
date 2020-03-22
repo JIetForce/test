@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import { useHistory } from 'react-router-dom';
-import { Context } from '../../../context';
+import { Context } from '../../context';
 
 const Profile = () => {
   const { setAuth } = useContext(Context);
@@ -16,7 +16,10 @@ const Profile = () => {
   return (
     <div>
       <h1>Profile Page</h1>
-      <button onClick={logout}>LOGOUT</button>
+      <p>Some content</p>
+      <button type='button' className='btn btn-danger' onClick={logout}>
+        LOGOUT
+      </button>
     </div>
   );
 };
